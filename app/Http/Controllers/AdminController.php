@@ -52,8 +52,8 @@ class AdminController extends Controller
             // session(['password' => $password]);
             session(['role' => $role]);
             session(['level' => $level]);
-            return redirect()->route('/');  
-            
+            return redirect()->route('/');
+
         } else if($data != null){
             $level = $data->level;
             $username = $data->username;
@@ -63,7 +63,7 @@ class AdminController extends Controller
             // session(['password' => $password]);
             session(['role' => $role]);
             session(['level' => $level]);
-            return redirect()->route('/');  
+            return redirect()->route('/');
         }
     }
     function logout(){
@@ -98,8 +98,8 @@ class AdminController extends Controller
             'level' => 'staf',
         ]);
 
-        return redirect('/listStaf');
-        
+        return redirect('/tambahStaf');
+
     }
     public function createFolder(Request $request)
     {
@@ -112,29 +112,29 @@ class AdminController extends Controller
     }
     function listStaf() {
         $data = staf::all();
-        return view('content.Admin.listStaf', ['data' => $data]);
+        return view('content.Admin.tableStaf', ['data' => $data]);
     }
-    
 
 
-    function editStaf($id) {
+
+    public function editStaf($id) {
         $data = staf::find($id);
-        // dd($data);
-
-        return view('content.Admin.editStaf', compact('data'));
+        return view('content.Admin.editStaf', [
+            'data' => $data
+        ]);
     }
 
     function updateStaf(Request $request, $id) {
         $data = staf::find($id);
         $data->update($request->all());
 
-        return redirect('/listStaf');
+        return redirect('/tambahStaf');
     }
-    
+
     function deleteStaf($id) {
         $data = staf::find($id);
         $data->delete();
-        
-        return redirect('/listStaf');
+
+        return redirect('/tambahStaf');
     }
 }

@@ -65,20 +65,21 @@ class SuperAdminController extends Controller
 
         return redirect()->route('lihat')->with('success', 'Berhasil Menambahkan Data');
     }
-    
+
     public function lihat(admin $admin)
     {
         $admin = admin::all();
         return view('content.SuperAdmin.tableAdmin', ['admin' => $admin]);
-    
+
     }
 
-    public function edit(admin $admin)
+    public function edit(admin $admin, $id)
     {
-        // return view('content.SuperAdmin.tableAdmin');
+        $admin = admin::findOrFail($id);
+        return view('content.SuperAdmin.tableAdmin');
     }
 
-    public function update(Request $request, admin $admin)
+    public function update(Request $request, $id)
     {
         // $request->validate([
         //     'username' => 'required|min:3',
@@ -91,7 +92,7 @@ class SuperAdminController extends Controller
         $admin->update($request->all());
     }
 
-    public function destroy(admin $admin)
+    public function destroy(admin $admin, $id)
     {
         $admin->delete();
         return redirect()->route('lihat')->with('success', 'Berhasil Menghapus Data');

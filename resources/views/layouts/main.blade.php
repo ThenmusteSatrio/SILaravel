@@ -9,7 +9,7 @@
   <!-- Tailwind css -->
   <link rel="stylesheet" href="css/app.css">
   <!-- Icon SMK-->
-  <link rel="shortcut icon" href="images/smk2.png">
+  <link rel="shortcut icon" href="img/smk2.png">
   <!-- Datatables config -->
   <link rel="stylesheet" href="DataTables/datatables.min.css" type="text/css">
   <script src="DataTables/datatables.min.js" type="text/javascript"></script>
@@ -107,7 +107,7 @@
 
       </div>
     </a>
-    <a href="#">
+    <a href="{{ route('lihat') }}">
       <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
         <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
           <path d="M6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Zm11-3h-2V5a1 1 0 0 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 0 0 2 0V9h2a1 1 0 1 0 0-2Z" />
@@ -223,9 +223,14 @@
 
   </div>
   @elseif (session()->get('level') == 'staf')
-  <nav class="border-gray-400 bg-gray-800 flex justify-between  w-full">
-    <img id="avatarButton" type="button" data-dropdown-toggle="userDropdownId" data-dropdown-placement="bottom-start" class="w-14 h-14 rounded-full cursor-pointer " src="img/smk2.png" alt="User dropdown">
-    <span class="mdi mdi-menu  text-white text-4xl top-5 left-4 cursor-pointer" onclick="Open()"></span>
+  <nav class="border-gray-400 bg-gray-800  flex justify-between items-center px-5 py-3">
+    <span class="s text-white text-4xl top-5 left-4 cursor-pointer" onclick="Open()">
+      <svg class="w-6 h-6 text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+        <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
+      </svg>
+    </span>
+    {{-- <img id="avatarButton" type="button" data-dropdown-toggle="userDropdownId" data-dropdown-placement="bottom-start" class="w-14 h-14 rounded-full cursor-pointer " src="img/smk2.png" alt="User dropdown"> --}}
+
   </nav>
 
   </div>
@@ -295,8 +300,6 @@
 
   @yield('container')
 
-
-  <h1>{{$data ?? ""}}</h1>
 
   <script>
     function Open() {
