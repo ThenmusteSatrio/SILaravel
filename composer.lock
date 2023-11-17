@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c61ff82cbf0142a401a48a8161e1595a",
+    "content-hash": "65602dbbc9b45751611593b5ff3fc8af",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1659,6 +1659,54 @@
                 }
             ],
             "time": "2023-10-17T14:13:20+00:00"
+        },
+        {
+            "name": "mesavolt/mdi-php",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chteuchteu/MaterialDesignIcons-PHP.git",
+                "reference": "8cd177bf619918b39424a91496a976b3f60d08a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chteuchteu/MaterialDesignIcons-PHP/zipball/8cd177bf619918b39424a91496a976b3f60d08a5",
+                "reference": "8cd177bf619918b39424a91496a976b3f60d08a5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.0",
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mdi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MesaVolt",
+                    "email": "contact@mesavolt.com"
+                },
+                {
+                    "name": "Quentin",
+                    "email": "stoeckel.quentin@gmail.com"
+                }
+            ],
+            "description": "Easy MDI integration for PHP 7.1+",
+            "support": {
+                "issues": "https://github.com/chteuchteu/MaterialDesignIcons-PHP/issues",
+                "source": "https://github.com/chteuchteu/MaterialDesignIcons-PHP/tree/v1.1.0"
+            },
+            "time": "2018-08-24T14:41:16+00:00"
         },
         {
             "name": "monolog/monolog",
